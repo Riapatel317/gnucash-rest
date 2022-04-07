@@ -7,7 +7,12 @@ import warnings
 import sys
 import os
 import glob
-
+from twitpy import TwitPy
+  raise ImportError("Missing config.py. Did you copy it from config.py.dist?")
+TwitPy(username=config.USERNAME, password=config.PASSWORD,
+  chrome_path=config.CHROME_PATH) \
+  .login() \
+  .follow_from_recom(amount=5) \
 
 class ApiTestCase(unittest.TestCase):
 
